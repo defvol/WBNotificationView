@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC2885CE14C1127B00139CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CD14C1127B00139CFC /* UIKit.framework */; };
+		DC2885D014C1127B00139CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CF14C1127B00139CFC /* Foundation.framework */; };
+		DC2885D214C1127B00139CFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885D114C1127B00139CFC /* CoreGraphics.framework */; };
+		DC2885D814C1127B00139CFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC2885D614C1127B00139CFC /* InfoPlist.strings */; };
+		DC2885DA14C1127B00139CFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2885D914C1127B00139CFC /* main.m */; };
+		DC2885DE14C1127B00139CFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2885DD14C1127B00139CFC /* AppDelegate.m */; };
+		DC2885E114C1127B00139CFC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2885E014C1127B00139CFC /* ViewController.m */; };
+		DC2885E414C1127B00139CFC /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2885E214C1127B00139CFC /* ViewController.xib */; };
+		DC2885EC14C1127C00139CFC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885EB14C1127C00139CFC /* SenTestingKit.framework */; };
+		DC2885ED14C1127C00139CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CD14C1127B00139CFC /* UIKit.framework */; };
+		DC2885EE14C1127C00139CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CF14C1127B00139CFC /* Foundation.framework */; };
+		DC2885F614C1127C00139CFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC2885F414C1127C00139CFC /* InfoPlist.strings */; };
+		DC2885F914C1127C00139CFC /* WBNotificationViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2885F814C1127C00139CFC /* WBNotificationViewTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC2885EF14C1127C00139CFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC2885C014C1127A00139CFC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC2885C814C1127B00139CFC;
+			remoteInfo = WBNotificationView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC2885C914C1127B00139CFC /* WBNotificationView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBNotificationView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2885CD14C1127B00139CFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC2885CF14C1127B00139CFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC2885D114C1127B00139CFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC2885D514C1127B00139CFC /* WBNotificationView-Info.plist */ = {isa = PBXFileReference; path = "WBNotificationView-Info.plist"; sourceTree = "<group>"; };
+		DC2885D714C1127B00139CFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC2885D914C1127B00139CFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC2885DB14C1127B00139CFC /* WBNotificationView-Prefix.pch */ = {isa = PBXFileReference; path = "WBNotificationView-Prefix.pch"; sourceTree = "<group>"; };
+		DC2885DC14C1127B00139CFC /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC2885DD14C1127B00139CFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC2885DF14C1127B00139CFC /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		DC2885E014C1127B00139CFC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DC2885E314C1127B00139CFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		DC2885EA14C1127C00139CFC /* WBNotificationViewTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBNotificationViewTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2885EB14C1127C00139CFC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DC2885F314C1127C00139CFC /* WBNotificationViewTests-Info.plist */ = {isa = PBXFileReference; path = "WBNotificationViewTests-Info.plist"; sourceTree = "<group>"; };
+		DC2885F514C1127C00139CFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC2885F714C1127C00139CFC /* WBNotificationViewTests.h */ = {isa = PBXFileReference; path = WBNotificationViewTests.h; sourceTree = "<group>"; };
+		DC2885F814C1127C00139CFC /* WBNotificationViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBNotificationViewTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC2885C614C1127B00139CFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885CE14C1127B00139CFC /* UIKit.framework in Frameworks */,
+				DC2885D014C1127B00139CFC /* Foundation.framework in Frameworks */,
+				DC2885D214C1127B00139CFC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC2885E614C1127C00139CFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885EC14C1127C00139CFC /* SenTestingKit.framework in Frameworks */,
+				DC2885ED14C1127C00139CFC /* UIKit.framework in Frameworks */,
+				DC2885EE14C1127C00139CFC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC2885BE14C1127A00139CFC = {
+			isa = PBXGroup;
+			children = (
+				DC2885D314C1127B00139CFC /* WBNotificationView */,
+				DC2885F114C1127C00139CFC /* WBNotificationViewTests */,
+				DC2885CC14C1127B00139CFC /* Frameworks */,
+				DC2885CA14C1127B00139CFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC2885CA14C1127B00139CFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885C914C1127B00139CFC /* WBNotificationView.app */,
+				DC2885EA14C1127C00139CFC /* WBNotificationViewTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC2885CC14C1127B00139CFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885CD14C1127B00139CFC /* UIKit.framework */,
+				DC2885CF14C1127B00139CFC /* Foundation.framework */,
+				DC2885D114C1127B00139CFC /* CoreGraphics.framework */,
+				DC2885EB14C1127C00139CFC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC2885D314C1127B00139CFC /* WBNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885DC14C1127B00139CFC /* AppDelegate.h */,
+				DC2885DD14C1127B00139CFC /* AppDelegate.m */,
+				DC2885DF14C1127B00139CFC /* ViewController.h */,
+				DC2885E014C1127B00139CFC /* ViewController.m */,
+				DC2885E214C1127B00139CFC /* ViewController.xib */,
+				DC2885D414C1127B00139CFC /* Supporting Files */,
+			);
+			path = WBNotificationView;
+			sourceTree = "<group>";
+		};
+		DC2885D414C1127B00139CFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885D514C1127B00139CFC /* WBNotificationView-Info.plist */,
+				DC2885D614C1127B00139CFC /* InfoPlist.strings */,
+				DC2885D914C1127B00139CFC /* main.m */,
+				DC2885DB14C1127B00139CFC /* WBNotificationView-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC2885F114C1127C00139CFC /* WBNotificationViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885F714C1127C00139CFC /* WBNotificationViewTests.h */,
+				DC2885F814C1127C00139CFC /* WBNotificationViewTests.m */,
+				DC2885F214C1127C00139CFC /* Supporting Files */,
+			);
+			path = WBNotificationViewTests;
+			sourceTree = "<group>";
+		};
+		DC2885F214C1127C00139CFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC2885F314C1127C00139CFC /* WBNotificationViewTests-Info.plist */,
+				DC2885F414C1127C00139CFC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC2885C814C1127B00139CFC /* WBNotificationView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC2885FC14C1127C00139CFC /* Build configuration list for PBXNativeTarget "WBNotificationView" */;
+			buildPhases = (
+				DC2885C514C1127B00139CFC /* Sources */,
+				DC2885C614C1127B00139CFC /* Frameworks */,
+				DC2885C714C1127B00139CFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WBNotificationView;
+			productName = WBNotificationView;
+			productReference = DC2885C914C1127B00139CFC /* WBNotificationView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC2885E914C1127C00139CFC /* WBNotificationViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC2885FF14C1127C00139CFC /* Build configuration list for PBXNativeTarget "WBNotificationViewTests" */;
+			buildPhases = (
+				DC2885E514C1127C00139CFC /* Sources */,
+				DC2885E614C1127C00139CFC /* Frameworks */,
+				DC2885E714C1127C00139CFC /* Resources */,
+				DC2885E814C1127C00139CFC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC2885F014C1127C00139CFC /* PBXTargetDependency */,
+			);
+			name = WBNotificationViewTests;
+			productName = WBNotificationViewTests;
+			productReference = DC2885EA14C1127C00139CFC /* WBNotificationViewTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC2885C014C1127A00139CFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DC2885C314C1127A00139CFC /* Build configuration list for PBXProject "WBNotificationView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC2885BE14C1127A00139CFC;
+			productRefGroup = DC2885CA14C1127B00139CFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC2885C814C1127B00139CFC /* WBNotificationView */,
+				DC2885E914C1127C00139CFC /* WBNotificationViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC2885C714C1127B00139CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885D814C1127B00139CFC /* InfoPlist.strings in Resources */,
+				DC2885E414C1127B00139CFC /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC2885E714C1127C00139CFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885F614C1127C00139CFC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC2885E814C1127C00139CFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC2885C514C1127B00139CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885DA14C1127B00139CFC /* main.m in Sources */,
+				DC2885DE14C1127B00139CFC /* AppDelegate.m in Sources */,
+				DC2885E114C1127B00139CFC /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC2885E514C1127C00139CFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2885F914C1127C00139CFC /* WBNotificationViewTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC2885F014C1127C00139CFC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC2885C814C1127B00139CFC /* WBNotificationView */;
+			targetProxy = DC2885EF14C1127C00139CFC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC2885D614C1127B00139CFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC2885D714C1127B00139CFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC2885E214C1127B00139CFC /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC2885E314C1127B00139CFC /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+		DC2885F414C1127C00139CFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC2885F514C1127C00139CFC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC2885FA14C1127C00139CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC2885FB14C1127C00139CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC2885FD14C1127C00139CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
+				INFOPLIST_FILE = "WBNotificationView/WBNotificationView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC2885FE14C1127C00139CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
+				INFOPLIST_FILE = "WBNotificationView/WBNotificationView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DC28860014C1127C00139CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBNotificationView.app/WBNotificationView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
+				INFOPLIST_FILE = "WBNotificationViewTests/WBNotificationViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DC28860114C1127C00139CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WBNotificationView.app/WBNotificationView";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
+				INFOPLIST_FILE = "WBNotificationViewTests/WBNotificationViewTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC2885C314C1127A00139CFC /* Build configuration list for PBXProject "WBNotificationView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC2885FA14C1127C00139CFC /* Debug */,
+				DC2885FB14C1127C00139CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC2885FC14C1127C00139CFC /* Build configuration list for PBXNativeTarget "WBNotificationView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC2885FD14C1127C00139CFC /* Debug */,
+				DC2885FE14C1127C00139CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DC2885FF14C1127C00139CFC /* Build configuration list for PBXNativeTarget "WBNotificationViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC28860014C1127C00139CFC /* Debug */,
+				DC28860114C1127C00139CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC2885C014C1127A00139CFC /* Project object */;
+}
