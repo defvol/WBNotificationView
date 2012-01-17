@@ -7,8 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "WBNotificationView.h"
 
-@implementation ViewController
+@implementation ViewController 
+{
+    BOOL toggleOn;
+    WBNotificationView *notificationView;
+}
+
+@synthesize toggleButton;
 
 - (void)didReceiveMemoryWarning
 {
@@ -21,11 +28,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    notificationView = [[WBNotificationView alloc] initWithMessage:@"Something's not working" ofType:WBNotificationViewTypeError];
+    [self.view addSubview:notificationView];
 }
 
 - (void)viewDidUnload
 {
+    [self setToggleButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -39,6 +49,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [notificationView slideInDisappearingIn:3.0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -55,6 +66,16 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)shouldToggle:(id)sender 
+{
+    // Switch toggle on and off
+    if (toggleOn ^= 1) {
+        [notificationView slideIn];
+    } else {
+        [notificationView slideOut];
+    }
 }
 
 @end

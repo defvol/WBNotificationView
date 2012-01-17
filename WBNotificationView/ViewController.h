@@ -10,4 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
+
+- (IBAction)shouldToggle:(id)sender;
+
 @end
