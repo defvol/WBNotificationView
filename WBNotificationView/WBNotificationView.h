@@ -17,7 +17,8 @@ typedef enum {
 
 @interface WBNotificationView : UIView
 
-@property WBNotificationViewType type; 
+@property (nonatomic) WBNotificationViewType type; 
+@property (nonatomic, copy) NSString *message;
 
 - (id)initWithMessage:(NSString *)message ofType:(WBNotificationViewType)type;
 - (void)slideIn;

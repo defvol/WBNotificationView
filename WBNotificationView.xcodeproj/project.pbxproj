@@ -21,6 +21,7 @@
 		DC2885F614C1127C00139CFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC2885F414C1127C00139CFC /* InfoPlist.strings */; };
 		DC2885F914C1127C00139CFC /* WBNotificationViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2885F814C1127C00139CFC /* WBNotificationViewTests.m */; };
 		DC28860814C116D400139CFC /* WBNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC28860714C116D400139CFC /* WBNotificationView.m */; };
+		DC458C0314C77BA5000043A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC458C0214C77BA5000043A5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DC2885F814C1127C00139CFC /* WBNotificationViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBNotificationViewTests.m; sourceTree = "<group>"; };
 		DC28860614C116D400139CFC /* WBNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBNotificationView.h; sourceTree = "<group>"; };
 		DC28860714C116D400139CFC /* WBNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBNotificationView.m; sourceTree = "<group>"; };
+		DC458C0214C77BA5000043A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC458C0314C77BA5000043A5 /* QuartzCore.framework in Frameworks */,
 				DC2885CE14C1127B00139CFC /* UIKit.framework in Frameworks */,
 				DC2885D014C1127B00139CFC /* Foundation.framework in Frameworks */,
 				DC2885D214C1127B00139CFC /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +87,7 @@
 		DC2885BE14C1127A00139CFC = {
 			isa = PBXGroup;
 			children = (
+				DC458C0214C77BA5000043A5 /* QuartzCore.framework */,
 				DC2885D314C1127B00139CFC /* WBNotificationView */,
 				DC2885F114C1127C00139CFC /* WBNotificationViewTests */,
 				DC2885CC14C1127B00139CFC /* Frameworks */,
@@ -443,6 +447,7 @@
 				DC2885FE14C1127C00139CFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC2885FF14C1127C00139CFC /* Build configuration list for PBXNativeTarget "WBNotificationViewTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +456,7 @@
 				DC28860114C1127C00139CFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
