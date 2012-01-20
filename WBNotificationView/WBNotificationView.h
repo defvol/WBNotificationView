@@ -20,9 +20,15 @@ typedef enum {
 @property (nonatomic) WBNotificationViewType type; 
 @property (nonatomic, copy) NSString *message;
 
+// Sets message and notification type
+// TODO: 
+// - Support landscape mode
 - (id)initWithMessage:(NSString *)message ofType:(WBNotificationViewType)type;
+// Moves the frame on top of the screen
 - (void)slideIn;
+// Moves the frame just above the screen
 - (void)slideOut;
+// Performs a slide-in/slide-out delayed transition
 - (void)slideInDisappearingIn:(NSTimeInterval)seconds;
 
 @end

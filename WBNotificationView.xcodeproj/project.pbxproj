@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC26863D14C8982600F6AF2A /* CGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DC26863C14C8982600F6AF2A /* CGUtilities.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DC2885CE14C1127B00139CFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CD14C1127B00139CFC /* UIKit.framework */; };
 		DC2885D014C1127B00139CFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885CF14C1127B00139CFC /* Foundation.framework */; };
 		DC2885D214C1127B00139CFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2885D114C1127B00139CFC /* CoreGraphics.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC26863B14C8982600F6AF2A /* CGUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGUtilities.h; path = ../CGUtilities.h; sourceTree = "<group>"; };
+		DC26863C14C8982600F6AF2A /* CGUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CGUtilities.m; path = ../CGUtilities.m; sourceTree = "<group>"; };
 		DC2885C914C1127B00139CFC /* WBNotificationView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBNotificationView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2885CD14C1127B00139CFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC2885CF14C1127B00139CFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 			children = (
 				DC28860614C116D400139CFC /* WBNotificationView.h */,
 				DC28860714C116D400139CFC /* WBNotificationView.m */,
+				DC26863B14C8982600F6AF2A /* CGUtilities.h */,
+				DC26863C14C8982600F6AF2A /* CGUtilities.m */,
 				DC28860914C116E400139CFC /* Demo */,
 				DC2885D414C1127B00139CFC /* Supporting Files */,
 			);
@@ -278,6 +283,7 @@
 				DC2885DE14C1127B00139CFC /* AppDelegate.m in Sources */,
 				DC2885E114C1127B00139CFC /* ViewController.m in Sources */,
 				DC28860814C116D400139CFC /* WBNotificationView.m in Sources */,
+				DC26863D14C8982600F6AF2A /* CGUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +385,7 @@
 				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
 				INFOPLIST_FILE = "WBNotificationView/WBNotificationView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -390,6 +397,7 @@
 				GCC_PREFIX_HEADER = "WBNotificationView/WBNotificationView-Prefix.pch";
 				INFOPLIST_FILE = "WBNotificationView/WBNotificationView-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
