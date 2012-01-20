@@ -20,20 +20,25 @@
 
 #define kGradientColorErrorTop      [UIColor colorWithRed:238.0/255.0 green:095.0/255.0 blue:091.0/255.0 alpha:1.00] // #EE5F5B
 #define kGradientColorErrorBottom   [UIColor colorWithRed:196.0/255.0 green:060.0/255.0 blue:053.0/255.0 alpha:1.00] // #C43C35
-#define kBorderColorErrorTop        [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
-#define kBorderColorErrorRight      [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
-#define kBorderColorErrorBottom     [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75] // alpha:0.10
-#define kBorderColorErrorLeft       [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
 
+#define kGradientColorWarningTop    [UIColor colorWithRed:252.0/255.0 green:238.0/255.0 blue:193.0/255.0 alpha:1.00] // #FCEEC1
 #define kGradientColorWarningBottom [UIColor colorWithRed:238.0/255.0 green:220.0/255.0 blue:148.0/255.0 alpha:1.00] // #EEDC94
+
+#define kGradientColorSuccessTop    [UIColor colorWithRed:098.0/255.0 green:196.0/255.0 blue:098.0/255.0 alpha:1.00] // #62C462
 #define kGradientColorSuccessBottom [UIColor colorWithRed:087.0/255.0 green:169.0/255.0 blue:087.0/255.0 alpha:1.00] // #57A957
+
+#define kGradientColorInfoTop       [UIColor colorWithRed:091.0/255.0 green:192.0/255.0 blue:222.0/255.0 alpha:1.00] // #5BC0DE
 #define kGradientColorInfoBottom    [UIColor colorWithRed:051.0/255.0 green:155.0/255.0 blue:185.0/255.0 alpha:1.00] // #339BB9
+
+#define kBorderColorTop        [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
+#define kBorderColorRight      [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
+#define kBorderColorBottom     [UIColor colorWithRed:0 green:0 blue:0 alpha:0.75] // alpha:0.25
+#define kBorderColorLeft       [UIColor colorWithRed:0 green:0 blue:0 alpha:0.50] // alpha:0.10
 
 // Message box
 
 #define kBoxShadowColor     [UIColor colorWithRed:1 green:1 blue:1 alpha:0.25]
 #define kHeight             35.0
-#define kMessageViewTag     1000
 
 typedef void (^completionBlock)(BOOL);
 
@@ -43,6 +48,7 @@ typedef void (^completionBlock)(BOOL);
     UIColor *gradientColorTop;
     UIColor *gradientColorBottom;
     NSArray *borderColors;
+    UILabel *messageLabel;
 }
 
 @synthesize type = _type;
@@ -54,35 +60,33 @@ typedef void (^completionBlock)(BOOL);
     
     gradientColorTop = nil;
     gradientColorBottom = nil;
-    borderColors = nil;
     
     // Updates gradient colors when changing notification type
     switch (_type) {
         case WBNotificationViewTypeError:
             gradientColorTop = kGradientColorErrorTop;
             gradientColorBottom = kGradientColorErrorBottom;
-            borderColors = [NSArray arrayWithObjects:
-                            (id)kBorderColorErrorTop.CGColor, 
-                            (id)kBorderColorErrorRight.CGColor, 
-                            (id)kBorderColorErrorBottom.CGColor, 
-                            (id)kBorderColorErrorLeft.CGColor, 
-                            nil];
+            [messageLabel setTextColor:[UIColor whiteColor]];
             break;
         case WBNotificationViewTypeInfo:
-            gradientColorTop = kGradientColorInfoBottom;
+            gradientColorTop = kGradientColorInfoTop;
             gradientColorBottom = kGradientColorInfoBottom;
+            [messageLabel setTextColor:[UIColor whiteColor]];
             break;
         case WBNotificationViewTypeSuccess:
-            gradientColorTop = kGradientColorSuccessBottom;
+            gradientColorTop = kGradientColorSuccessTop;
             gradientColorBottom = kGradientColorSuccessBottom;
+            [messageLabel setTextColor:[UIColor whiteColor]];
             break;
         case WBNotificationViewTypeWarning:
-            gradientColorTop = kGradientColorWarningBottom;
+            gradientColorTop = kGradientColorWarningTop;
             gradientColorBottom = kGradientColorWarningBottom;
+            [messageLabel setTextColor:[UIColor blackColor]];
             break;
         default:
-            gradientColorTop = kGradientColorInfoBottom;
+            gradientColorTop = kGradientColorInfoTop;
             gradientColorBottom = kGradientColorInfoBottom;
+            [messageLabel setTextColor:[UIColor whiteColor]];
     }
 }
 
@@ -109,7 +113,7 @@ typedef void (^completionBlock)(BOOL);
         }        
     }
  
-    [((UILabel *)[self viewWithTag:kMessageViewTag]) setText:_message];
+    [messageLabel setText:_message];
 }
 
 #pragma mark - Init
@@ -120,13 +124,19 @@ typedef void (^completionBlock)(BOOL);
     if (self) {
         // Add message label
         CGRect messageFrame = CGRectMake(15, 7, frame.size.width - 15, 19);
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:messageFrame];
-        messageLabel.tag = kMessageViewTag;
+        messageLabel = [[UILabel alloc] initWithFrame:messageFrame];
         messageLabel.text = self.message;
         messageLabel.textColor = [UIColor whiteColor];
         messageLabel.backgroundColor = [UIColor clearColor];
         messageLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
         [self addSubview:messageLabel];
+        
+        borderColors = [NSArray arrayWithObjects:
+                        (id)kBorderColorTop.CGColor, 
+                        (id)kBorderColorRight.CGColor, 
+                        (id)kBorderColorBottom.CGColor, 
+                        (id)kBorderColorLeft.CGColor, 
+                        nil];
     }
     return self;
 }
@@ -206,8 +216,8 @@ typedef void (^completionBlock)(BOOL);
 {
     self = [self initWithFrame:CGRectMake(0, -kHeight, 320, kHeight)];
     if (self) {
-        self.message = aMessage;
         self.type = aType;
+        self.message = aMessage;
     }
     return self;
 }
