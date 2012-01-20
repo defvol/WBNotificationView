@@ -23,6 +23,7 @@
 
 #define kGradientColorWarningTop    [UIColor colorWithRed:252.0/255.0 green:238.0/255.0 blue:193.0/255.0 alpha:1.00] // #FCEEC1
 #define kGradientColorWarningBottom [UIColor colorWithRed:238.0/255.0 green:220.0/255.0 blue:148.0/255.0 alpha:1.00] // #EEDC94
+#define kTextColorWarning           [UIColor colorWithRed:064.0/255.0 green:064.0/255.0 blue:064.0/255.0 alpha:1.00] // #404040
 
 #define kGradientColorSuccessTop    [UIColor colorWithRed:098.0/255.0 green:196.0/255.0 blue:098.0/255.0 alpha:1.00] // #62C462
 #define kGradientColorSuccessBottom [UIColor colorWithRed:087.0/255.0 green:169.0/255.0 blue:087.0/255.0 alpha:1.00] // #57A957
@@ -81,7 +82,7 @@ typedef void (^completionBlock)(BOOL);
         case WBNotificationViewTypeWarning:
             gradientColorTop = kGradientColorWarningTop;
             gradientColorBottom = kGradientColorWarningBottom;
-            [messageLabel setTextColor:[UIColor blackColor]];
+            [messageLabel setTextColor:kTextColorWarning];
             break;
         default:
             gradientColorTop = kGradientColorInfoTop;
