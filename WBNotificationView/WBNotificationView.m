@@ -29,15 +29,11 @@
 #define kGradientColorSuccessBottom [UIColor colorWithRed:087.0/255.0 green:169.0/255.0 blue:087.0/255.0 alpha:1.00] // #57A957
 #define kGradientColorInfoBottom    [UIColor colorWithRed:051.0/255.0 green:155.0/255.0 blue:185.0/255.0 alpha:1.00] // #339BB9
 
-// Message box defaults
+// Message box
 
 #define kBoxShadowColor     [UIColor colorWithRed:1 green:1 blue:1 alpha:0.25]
 #define kHeight             35.0
-#define kMessageFrame       CGRectMake(15, 7, self.bounds.size.width - 15, 19)
-
-// Helpers
-
-#define INVERT_SIGN(x)          ~x + 1
+#define kMessageViewTag     1000
 
 typedef void (^completionBlock)(BOOL);
 
@@ -92,8 +88,28 @@ typedef void (^completionBlock)(BOOL);
 
 - (void)setMessage:(NSString *)message
 {
-    _message = message;
-    [self setNeedsDisplay];
+    if (message != nil) {
+        _message = message;        
+    } else {
+        switch (_type) {
+            case WBNotificationViewTypeError:
+                _message = kMessageError;
+                break;
+            case WBNotificationViewTypeInfo:
+                _message = kMessageInfo;
+                break;
+            case WBNotificationViewTypeSuccess:
+                _message = kMessageSuccess;
+                break;
+            case WBNotificationViewTypeWarning:
+                _message = kMessageWarning;
+                break;
+            default:
+                break;
+        }        
+    }
+ 
+    [((UILabel *)[self viewWithTag:kMessageViewTag]) setText:_message];
 }
 
 #pragma mark - Init
@@ -102,7 +118,15 @@ typedef void (^completionBlock)(BOOL);
 {
     self = [super initWithFrame:frame];
     if (self) {
-
+        // Add message label
+        CGRect messageFrame = CGRectMake(15, 7, frame.size.width - 15, 19);
+        UILabel *messageLabel = [[UILabel alloc] initWithFrame:messageFrame];
+        messageLabel.tag = kMessageViewTag;
+        messageLabel.text = self.message;
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        [self addSubview:messageLabel];
     }
     return self;
 }
@@ -137,10 +161,7 @@ typedef void (^completionBlock)(BOOL);
     CGContextDrawBorder(context, rect, 1.0, (__bridge CFArrayRef)borderColors);
     
     // Inner box shadow
-    CGContextDrawInnerBoxShadow(context, rect, CGSizeMake(0, 2), 1, [kBoxShadowColor CGColor]);
-    
-    // Message
-    [self.message drawInRect:kMessageFrame withFont:[UIFont fontWithName:@"Helvetica" size:13.0]];
+    CGContextDrawInnerBoxShadow(context, rect, CGSizeMake(0, 2), 1, [kBoxShadowColor CGColor]);    
 }
 
 #pragma mark - UI
