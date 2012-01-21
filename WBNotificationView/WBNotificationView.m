@@ -41,7 +41,7 @@
 #define kBoxShadowColor     [UIColor colorWithRed:1 green:1 blue:1 alpha:0.25]
 #define kHeight             35.0
 
-typedef void (^completionBlock)(BOOL);
+typedef void (^completionBlock)(void);
 
 @implementation WBNotificationView
 {
@@ -54,6 +54,7 @@ typedef void (^completionBlock)(BOOL);
 
 @synthesize type = _type;
 @synthesize message = _message;
+@synthesize delegate;
 
 - (void)setType:(WBNotificationViewType)type
 {
@@ -177,6 +178,18 @@ typedef void (^completionBlock)(BOOL);
     CGContextDrawInnerBoxShadow(context, rect, CGSizeMake(0, 2), 1, [kBoxShadowColor CGColor]);    
 }
 
+#pragma mark - Delegate helpers
+
+- (void)shouldNotifyThatViewWasClosed {
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(viewWasClosed:)])
+        [self.delegate viewWasClosed:self]; 
+}
+
+- (void)shouldNotifyThatViewDidSlideOut {
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(viewDidSlideOut:)])
+        [self.delegate viewDidSlideOut:self];  
+}
+
 #pragma mark - UI
 
 - (void)performSlideToFrame:(CGRect)newFrame finishingWith:(completionBlock)routine
@@ -185,32 +198,46 @@ typedef void (^completionBlock)(BOOL);
     if (sliding) return;
         
     sliding = YES;
-    
-    // If completion block is missing, add default
-    if (routine == nil)
-        routine = ^(BOOL finished) { sliding = NO; };
-        
+            
     [UIView animateWithDuration:0.5 
                           delay:0 
                         options:UIViewAnimationCurveLinear 
                      animations:^{ self.frame = newFrame; } 
-                     completion:routine]; 
+                     completion:^(BOOL finished) { 
+                         sliding = NO;
+                         if (routine != nil) 
+                             routine();
+                     }]; 
 }
 
 - (void)performSlideToFrame:(CGRect)newFrame {
     [self performSlideToFrame:newFrame finishingWith:nil];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    if (sliding == NO)
-        [self slideOut];
-}
-
 - (void)slideInFinishingWith:(completionBlock)routine
 {
-    CGRect _frame = self.frame;
-    _frame.origin.y = 0.0;    
-    [self performSlideToFrame:_frame finishingWith:routine];
+    CGRect newFrame = self.frame;
+    newFrame.origin.y = 0.0;    
+    [self performSlideToFrame:newFrame finishingWith:routine];
+}
+
+- (void)slideOutFinishingWith:(completionBlock)routine
+{
+    CGRect newFrame = self.frame;
+    newFrame.origin.y = -newFrame.size.height;    
+    [self performSlideToFrame:newFrame finishingWith:^{
+        routine();
+        [self shouldNotifyThatViewDidSlideOut];
+    }];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
+    if (sliding == NO) {
+        [self slideOutFinishingWith:^{ 
+            [self shouldNotifyThatViewWasClosed];
+        }];
+    }
 }
 
 #pragma mark - API
@@ -227,17 +254,11 @@ typedef void (^completionBlock)(BOOL);
 
 - (void)slideIn { [self slideInFinishingWith:nil]; }
 
-- (void)slideOut
-{
-    CGRect newFrame = self.frame;
-    newFrame.origin.y = -newFrame.size.height;    
-    [self performSlideToFrame:newFrame];
-}
+- (void)slideOut { [self slideOutFinishingWith:nil]; }
 
 - (void)slideInDisappearingIn:(NSTimeInterval)seconds 
 {
-    [self slideInFinishingWith:^(BOOL finished) {
-        sliding = NO;
+    [self slideInFinishingWith:^() {
         [self performSelector:@selector(slideOut) withObject:nil afterDelay:seconds];
     }];
 }

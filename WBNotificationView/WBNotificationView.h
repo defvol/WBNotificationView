@@ -15,10 +15,21 @@ typedef enum {
     WBNotificationViewTypeInfo
 } WBNotificationViewType;
 
+@class WBNotificationView;
+
+@protocol WBNotificationViewDelegate <NSObject>
+
+@optional
+- (void)viewWasClosed:(WBNotificationView *)sender;
+- (void)viewDidSlideOut:(WBNotificationView *)sender;
+
+@end
+
 @interface WBNotificationView : UIView
 
 @property (nonatomic) WBNotificationViewType type; 
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, weak) id <WBNotificationViewDelegate> delegate;
 
 // Sets message and notification type
 // TODO: 
