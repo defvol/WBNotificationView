@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 
-    notificationView = [[WBNotificationView alloc] initWithMessage:nil ofType:WBNotificationViewTypeWarning];
+    notificationView = [[WBNotificationView alloc] initWithMessage:@"This message will self-destroy in 3 seconds" ofType:WBNotificationViewTypeWarning];
     [notificationView setDelegate:self];
     [self.view addSubview:notificationView];
 }
@@ -50,6 +50,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [notificationView slideInDisappearingIn:3];
 }
 
 - (void)viewDidAppear:(BOOL)animated
