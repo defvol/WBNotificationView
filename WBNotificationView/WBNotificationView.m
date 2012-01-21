@@ -205,8 +205,7 @@ typedef void (^completionBlock)(void);
                      animations:^{ self.frame = newFrame; } 
                      completion:^(BOOL finished) { 
                          sliding = NO;
-                         if (routine != nil) 
-                             routine();
+                         if (routine) routine();
                      }]; 
 }
 
@@ -226,7 +225,7 @@ typedef void (^completionBlock)(void);
     CGRect newFrame = self.frame;
     newFrame.origin.y = -newFrame.size.height;    
     [self performSlideToFrame:newFrame finishingWith:^{
-        routine();
+        if (routine) routine();
         [self shouldNotifyThatViewDidSlideOut];
     }];
 }
