@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "WBNotificationView.h"
 
 @implementation ViewController 
 {
@@ -15,7 +14,10 @@
     WBNotificationView *notificationView;
 }
 
-@synthesize toggleButton;
+@synthesize warningButton;
+@synthesize errorButton;
+@synthesize successButton;
+@synthesize infoButton;
 
 - (void)didReceiveMemoryWarning
 {
@@ -29,13 +31,17 @@
 {
     [super viewDidLoad];
 
-    notificationView = [[WBNotificationView alloc] initWithMessage:@"Something's not working" ofType:WBNotificationViewTypeError];
+    notificationView = [[WBNotificationView alloc] initWithMessage:nil ofType:WBNotificationViewTypeWarning];
+    [notificationView setDelegate:self];
     [self.view addSubview:notificationView];
 }
 
 - (void)viewDidUnload
 {
-    [self setToggleButton:nil];
+    [self setWarningButton:nil];
+    [self setErrorButton:nil];
+    [self setSuccessButton:nil];
+    [self setInfoButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -49,7 +55,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [notificationView slideInDisappearingIn:3.0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -70,12 +75,40 @@
 
 - (IBAction)shouldToggle:(id)sender 
 {
+    WBNotificationViewType type = WBNotificationViewTypeInfo;
+    
+    if (sender == warningButton) {
+        type = WBNotificationViewTypeWarning;
+    } else if (sender == errorButton) {
+        type = WBNotificationViewTypeError;
+    } else if (sender == successButton) {
+        type = WBNotificationViewTypeSuccess;
+    } else if (sender == infoButton) {
+        type = WBNotificationViewTypeInfo;
+    }
+    
+    [notificationView setType:type];
+    [notificationView setMessage:nil]; // Set to default
+    
     // Switch toggle on and off
     if (toggleOn ^= 1) {
         [notificationView slideIn];
     } else {
         [notificationView slideOut];
     }
+}
+
+#pragma mark - WBNotificationViewDelegate
+
+- (void)viewWasClosed:(WBNotificationView *)sender
+{
+    NSLog(@"View was closed");
+    toggleOn = NO;
+}
+
+- (void)viewDidSlideOut:(WBNotificationView *)sender
+{
+    NSLog(@"View did slide out");
 }
 
 @end
