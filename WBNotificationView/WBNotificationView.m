@@ -89,6 +89,8 @@ typedef void (^completionBlock)(BOOL);
             gradientColorBottom = kGradientColorInfoBottom;
             [messageLabel setTextColor:[UIColor whiteColor]];
     }
+
+    [self setNeedsDisplay];
 }
 
 - (void)setMessage:(NSString *)message
@@ -129,7 +131,7 @@ typedef void (^completionBlock)(BOOL);
         messageLabel.text = self.message;
         messageLabel.textColor = [UIColor whiteColor];
         messageLabel.backgroundColor = [UIColor clearColor];
-        messageLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        messageLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:13];
         [self addSubview:messageLabel];
         
         borderColors = [NSArray arrayWithObjects:
